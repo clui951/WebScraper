@@ -13,9 +13,11 @@ def print_list(lst):
 # protect for import 
 if __name__ == '__main__':
     
-    url = input('Enter a URL: ')
+    url = input('\nEnter a URL \n' + 
+                    'Must include ' + r"'https://'" ' header if applicable: \n(ex. https://www.google.com)\n' +
+                    '> ')
     
-    urlSoup = BeautifulSoup(urllib.request.urlopen("https://" + url).read())
+    urlSoup = BeautifulSoup(urllib.request.urlopen(url).read())
 
     choice = input('\nWhat to scrape? \n'
         '1. Links \n'
